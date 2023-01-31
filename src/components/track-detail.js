@@ -19,7 +19,7 @@ import MarkDown from './md-content';
  * It provides access to the first module of the track.
  */
 const TrackDetail = ({ track }) => {
-  const { title, description, thumbnail, author, length, modulesCount, modules, numberOfViews } = track;
+  const { title, description, thumbnail, author, durationInSeconds, modulesCount, modules, numberOfViews } = track;
 
   return (
     <ContentSection>
@@ -41,7 +41,7 @@ const TrackDetail = ({ track }) => {
             </IconAndLabel>
             <IconAndLabel>
               <IconTime width="14px" />
-              <div>{humanReadableTimeFromSeconds(length)}</div>
+              <div>{humanReadableTimeFromSeconds(durationInSeconds)}</div>
             </IconAndLabel>
           </DetailItem>
           <DetailItem>

@@ -5,19 +5,27 @@ import { Layout, QueryResult } from '../components';
 
 /** TRACKS gql query to retreive all tracks */
 const TRACKS = gql`
-  query getTracks {
-    tracksForHome {
+query TracksForHome {
+  tracksForHome {
+    id
+    title
+    author {
+      id
+      name
+      photo
+    }
+    thumbnail
+    length
+    durationInSeconds
+    modulesCount
+    description
+    numberOfViews
+    modules {
       id
       title
-      thumbnail
-      length
-      modulesCount
-      author {
-        name
-        photo
-      }
     }
   }
+}
 `;
 
 /**
