@@ -27,7 +27,7 @@ const INCREMENT_TRACK_VIEWS = gql`
  * for each track populating the tracks grid homepage.
  */
 const TrackCard = ({ track }) => {
-  const { title, thumbnail, author, length, modulesCount, id } = track;
+  const { title, thumbnail, author, durationInSeconds, modulesCount, id } = track;
 
   const [incrementTrackViews] = useMutation(INCREMENT_TRACK_VIEWS, {
     variables: { incrementTrackViewsId: id },
@@ -49,9 +49,9 @@ const TrackCard = ({ track }) => {
             <AuthorImage src={author.photo} />
             <AuthorAndTrack>
               <AuthorName>{author.name}</AuthorName>
-              <TrackLength>
-                {modulesCount} modules - {humanReadableTimeFromSeconds(length)}
-              </TrackLength>
+              <TrackdurationInSeconds>
+                {modulesCount} modules - {humanReadableTimeFromSeconds(durationInSeconds)}
+              </TrackdurationInSeconds>
             </AuthorAndTrack>
           </CardFooter>
         </CardBody>
@@ -163,6 +163,6 @@ const AuthorName = styled.div({
   fontSize: '1.1em',
 });
 
-const TrackLength = styled.div({
+const TrackdurationInSeconds = styled.div({
   fontSize: '0.8em',
 });

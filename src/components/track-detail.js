@@ -68,7 +68,7 @@ const TrackDetail = ({ track }) => {
               {modules.map((module) => (
                 <li key={module.title}>
                   <div>{module.title}</div>
-                  <ModuleLength>{humanReadableTimeFromSeconds(module.length)}</ModuleLength>
+                  <ModuleLength>{humanReadableTimeFromSeconds(module.durationInSeconds)}</ModuleLength>
                 </li>
               ))}
             </ul>
