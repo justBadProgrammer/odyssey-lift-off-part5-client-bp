@@ -5,8 +5,8 @@ import { Layout, QueryResult } from '../components';
 
 /** TRACKS gql query to retreive all tracks */
 const TRACKS = gql`
-query TracksForHome {
-  tracksForHome {
+query Tracks {
+  tracks {
     id
     title
     author {
@@ -38,7 +38,7 @@ const Tracks = () => {
   return (
     <Layout grid>
       <QueryResult error={error} loading={loading} data={data}>
-        {data?.tracksForHome?.map((track, index) => (
+        {data?.tracks?.map((track, index) => (
           <TrackCard key={track.id} track={track} />
         ))}
       </QueryResult>
