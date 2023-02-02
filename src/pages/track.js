@@ -15,7 +15,6 @@ query Track($trackId: ID!) {
       photo
     }
     thumbnail
-    length
     durationInSeconds
     modulesCount
     description
@@ -23,7 +22,6 @@ query Track($trackId: ID!) {
     modules {
       id
       title
-      length
       durationInSeconds
     }
   }

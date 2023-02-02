@@ -15,7 +15,6 @@ query Tracks {
       photo
     }
     thumbnail
-    length
     durationInSeconds
     modulesCount
     description

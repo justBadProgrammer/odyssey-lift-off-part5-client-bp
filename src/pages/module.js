@@ -11,7 +11,6 @@ query Module($moduleId: ID!) {
   module(id: $moduleId) {
     id
     title
-    length
     durationInSeconds
     content
     videoUrl
@@ -21,7 +20,6 @@ query Module($moduleId: ID!) {
       modules {
         id
         title
-        length
         durationInSeconds
       }
     }
